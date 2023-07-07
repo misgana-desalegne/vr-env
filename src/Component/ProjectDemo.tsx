@@ -1,19 +1,10 @@
-import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { IoCopyOutline } from "react-icons/io5";
+
 import "../App.css";
 const ProjectDemo = () => {
-  const [name, setName] = useState("");
-  const [comment, setComment] = useState("");
-
-  //const [comments, setComments] = useState([]);
-
-  const handleSubmit = () => {
-    // event.preventDefault();
-    //const newComment = { name, comment };
-    //setComments([...comments, newComment]);
-    setName("");
-    setComment("");
-  };
+  const email1 = "misgana21son@gmail.com";
+  const email2 = "razocharon@gamil.com";
 
   return (
     <div className="app-container">
@@ -62,49 +53,31 @@ const ProjectDemo = () => {
             </section>
           </Col>
         </Row>
-        <Row className="comment-row">
-          <Col>
-            <section className="comment-section">
-              <h2 className="text-center">Comments</h2>
-              <div className="comments-container">
-                {/* {comments.length > 0 ? (
-                  comments.map((comment, index) => (
-                    <div key={index} className="comment">
-                      <h3>{comment.name}</h3>
-                      <p>{comment.comment}</p>
-                    </div>
-                  ))
-                ) : (
-                  <p className="text-center">No comments yet.</p>
-                )} */}
-              </div>
-              <Form onSubmit={handleSubmit} className="comment-form">
-                <Form.Group controlId="formName">
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Enter your name"
-                  />
-                </Form.Group>
-                <Form.Group controlId="formComment">
-                  <Form.Label>Comment</Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    rows={3}
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                    placeholder="Enter your comment"
-                  />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                  Submit
-                </Button>
-              </Form>
-            </section>
-          </Col>
-        </Row>
+        <div>
+          <p>
+            You can email us at{" "}
+            <a href={`mailto:${email1}`} style={{ color: "skyblue" }}>
+              {email1}
+            </a>{" "}
+            :{" "}
+            <button
+              onClick={() => navigator.clipboard.writeText(email1)}
+              style={{ background: "gray" }}
+            >
+              <IoCopyOutline /> copy
+            </button>
+            {"   "} Or{"    "}
+            <a href={`mailto:${email2}`} style={{ color: "skyblue" }}>
+              {email2}
+            </a>
+            <button
+              style={{ background: "gray" }}
+              onClick={() => navigator.clipboard.writeText(email2)}
+            >
+              <IoCopyOutline /> copy
+            </button>
+          </p>
+        </div>
       </Container>
     </div>
   );
