@@ -38,22 +38,48 @@ const ProjectDemo = () => {
         </Row>
         <Row className="video-row">
           <Col>
+            <h2>First person perspective</h2>
             <section className="video-section">
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
-                  src="https://www.youtube.com/embed/b1VAzVa4szc"
+                  src="https://www.youtube.com/embed/gGrgsg204jU"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </section>
+          </Col>
+          <Col>
+            <h2>Third person perspective</h2>
+            <section className="video-section">
+              <div className="embed-responsive embed-responsive-16by9">
+                <iframe
+                  className="embed-responsive-item"
+                  src="https://www.youtube.com/embed/NiPxusee988"
                   allowFullScreen
                 ></iframe>
               </div>
             </section>
           </Col>
         </Row>
-        <Row>
+        <Row className="comment-row">
           <Col>
             <section className="comment-section">
-              <Form onSubmit={handleSubmit}>
-                <Form.Group>
+              <h2 className="text-center">Comments</h2>
+              <div className="comments-container">
+                {/* {comments.length > 0 ? (
+                  comments.map((comment, index) => (
+                    <div key={index} className="comment">
+                      <h3>{comment.name}</h3>
+                      <p>{comment.comment}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-center">No comments yet.</p>
+                )} */}
+              </div>
+              <Form onSubmit={handleSubmit} className="comment-form">
+                <Form.Group controlId="formName">
                   <Form.Label>Name</Form.Label>
                   <Form.Control
                     type="text"
@@ -62,7 +88,7 @@ const ProjectDemo = () => {
                     placeholder="Enter your name"
                   />
                 </Form.Group>
-                <Form.Group>
+                <Form.Group controlId="formComment">
                   <Form.Label>Comment</Form.Label>
                   <Form.Control
                     as="textarea"
