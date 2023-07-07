@@ -1,4 +1,4 @@
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { IoCopyOutline } from "react-icons/io5";
 
 import "../App.css";
