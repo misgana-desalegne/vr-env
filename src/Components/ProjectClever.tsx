@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "../App.css";
 const ProjectClever = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
-  const [comments, setComments] = useState([]);
+  //const [comments, setComments] = useState([]);
 
   const handleSubmit = () => {
     // event.preventDefault();
-    const newComment = { name, comment };
+    //const newComment = { name, comment };
     //setComments([...comments, newComment]);
     setName("");
     setComment("");
@@ -52,13 +52,6 @@ const ProjectClever = () => {
         <Row>
           <Col>
             <section className="comment-section">
-              <h2>Comments</h2>
-              {comments.map((comment, index) => (
-                <div key={index}>
-                  {/* <h5>{comment.name}</h5>
-                  <p>{comment.comment}</p> */}
-                </div>
-              ))}
               <Form onSubmit={handleSubmit}>
                 <Form.Group>
                   <Form.Label>Name</Form.Label>
