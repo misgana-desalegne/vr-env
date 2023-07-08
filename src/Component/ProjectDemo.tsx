@@ -9,7 +9,7 @@ const ProjectDemo = () => {
   return (
     <div className="app-container">
       <header className="text-center">
-        <h1>VR Project</h1>
+        <h1>Virtual Reality Project</h1>
       </header>
       <Container>
         <Row>
@@ -54,22 +54,23 @@ const ProjectDemo = () => {
           </Col>
         </Row>
         <div>
+          <h4>Contacts</h4>
           <p>
-            You can email us at{" "}
             <a href={`mailto:${email1}`} style={{ color: "skyblue" }}>
               {email1}
             </a>{" "}
-            :{" "}
             <button
               onClick={() => navigator.clipboard.writeText(email1)}
               style={{ background: "gray" }}
             >
               <IoCopyOutline /> copy
             </button>
-            {"   "} Or{"    "}
+          </p>
+          <p>
             <a href={`mailto:${email2}`} style={{ color: "skyblue" }}>
               {email2}
             </a>
+            {"  "}
             <button
               style={{ background: "gray" }}
               onClick={() => navigator.clipboard.writeText(email2)}
